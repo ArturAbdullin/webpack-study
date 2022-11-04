@@ -25,7 +25,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, "public"),
-    filename: "[name].js",
+    filename: "[name][contenthash].js", // contenthash is for caching https://webpack.js.org/guides/caching/
   },
   plugins: [
     new HtmlWebpackPlugin({
