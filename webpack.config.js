@@ -26,12 +26,13 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "public"),
     filename: "[name][contenthash].js", // contenthash is for caching https://webpack.js.org/guides/caching/
+    clean: true,
   },
   plugins: [
     new HtmlWebpackPlugin({
       title: "Webpack App",
       filename: "index.html",
-      template: "src/template.html"
+      template: "src/template.html",
     }),
   ],
 };
