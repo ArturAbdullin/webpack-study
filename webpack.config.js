@@ -1,6 +1,8 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
+const OUTPUT_FOLDER = "public";
+
 module.exports = {
   mode: "development",
   entry: {
@@ -24,9 +26,14 @@ module.exports = {
     extensions: [".ts", ".js"], // resolve modules
   },
   output: {
-    path: path.resolve(__dirname, "public"),
+    path: path.resolve(__dirname, OUTPUT_FOLDER),
     filename: "[name][contenthash].js", // contenthash is for caching https://webpack.js.org/guides/caching/
     clean: true,
+  },
+  devServer: {
+    static: {
+      directory: path.resolve(__dirname, OUTPUT_FOLDER)
+    }
   },
   plugins: [
     new HtmlWebpackPlugin({
