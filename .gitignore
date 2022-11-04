@@ -1,4 +1,4 @@
 node_modules
 
-# ignore .js files when webpack content hashing is implemented
-public/*.js
+public
+
