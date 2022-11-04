@@ -1,10 +1,14 @@
 import generateJoke from "./generateJoke";
 import "./styles/main.scss";
-import laughing from "./assets/laughing.svg";
+import chuckImg from "./assets/chuck.png";
 
 const laughImg: HTMLImageElement = document.getElementById(
   "laughImg"
 ) as HTMLImageElement;
-laughImg.src = laughing;
+laughImg.src = chuckImg;
 
-console.log(generateJoke());
+generateJoke();
+
+const anotherJokeBtn = document.getElementById("jokeBtn") as HTMLButtonElement;
+
+anotherJokeBtn.addEventListener("click", generateJoke);
