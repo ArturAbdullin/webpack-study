@@ -12,6 +12,11 @@ module.exports = {
         use: "ts-loader",
         include: [path.resolve(__dirname, "src")], // where to find .ts files
       },
+      {
+        test: /\.scss$/,
+        use: ["style-loader", "css-loader", "sass-loader"],
+        include: [path.resolve(__dirname, "src/styles")],
+      },
     ],
   },
   resolve: {
