@@ -33,7 +33,12 @@ module.exports = {
   devServer: {
     static: {
       directory: path.resolve(__dirname, OUTPUT_FOLDER)
-    }
+    },
+    port: 3000, // add a port to serve
+    open: true, // open browser upon serve
+    hot: true, // add HMR (hot module replacement)
+    compress: true, // enable gzip compression
+    historyApiFallback: true // is related to 404 pages https://webpack.js.org/configuration/dev-server/#devserverhistoryapifallback
   },
   plugins: [
     new HtmlWebpackPlugin({
