@@ -2,7 +2,9 @@ const path = require("path");
 
 module.exports = {
   mode: "development",
-  entry: "./src/index.ts",
+  entry: {
+    bundle: "./src/index.ts",
+  },
   module: {
     rules: [
       {
@@ -16,7 +18,7 @@ module.exports = {
     extensions: [".ts", ".js"], // resolve modules
   },
   output: {
-    filename: "main.js",
     path: path.resolve(__dirname, "public"),
+    filename: "[name].js",
   },
 };
