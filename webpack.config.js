@@ -5,6 +5,7 @@ const OUTPUT_FOLDER = "public";
 
 module.exports = {
   mode: "development",
+  devtool: 'source-map',
   entry: {
     bundle: "./src/index.ts",
   },
