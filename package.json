@@ -22,6 +22,10 @@
   },
   "homepage": "https://github.com/ArturAbdullin/webpack-study#readme",
   "devDependencies": {
+    "css-loader": "^6.7.1",
+    "sass": "^1.56.0",
+    "sass-loader": "^13.1.0",
+    "style-loader": "^3.3.1",
     "ts-loader": "^9.4.1",
     "typescript": "^4.8.4",
     "webpack": "^5.74.0",
