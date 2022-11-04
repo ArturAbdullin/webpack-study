@@ -5,7 +5,7 @@ const OUTPUT_FOLDER = "public";
 
 module.exports = {
   mode: "development",
-  devtool: 'source-map',
+  devtool: "source-map",
   entry: {
     bundle: "./src/index.ts",
   },
@@ -21,6 +21,10 @@ module.exports = {
         use: ["style-loader", "css-loader", "sass-loader"],
         include: [path.resolve(__dirname, "src/styles")],
       },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: "asset/resource",
+      },
     ],
   },
   resolve: {
@@ -30,16 +34,17 @@ module.exports = {
     path: path.resolve(__dirname, OUTPUT_FOLDER),
     filename: "[name][contenthash].js", // contenthash is for caching https://webpack.js.org/guides/caching/
     clean: true,
+    assetModuleFilename: "[name][ext]",
   },
   devServer: {
     static: {
-      directory: path.resolve(__dirname, OUTPUT_FOLDER)
+      directory: path.resolve(__dirname, OUTPUT_FOLDER),
     },
     port: 3000, // add a port to serve
     open: true, // open browser upon serve
     hot: true, // add HMR (hot module replacement)
     compress: true, // enable gzip compression
-    historyApiFallback: true // is related to 404 pages https://webpack.js.org/configuration/dev-server/#devserverhistoryapifallback
+    historyApiFallback: true, // is related to 404 pages https://webpack.js.org/configuration/dev-server/#devserverhistoryapifallback
   },
   plugins: [
     new HtmlWebpackPlugin({
