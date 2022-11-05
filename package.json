@@ -24,6 +24,8 @@
   "homepage": "https://github.com/ArturAbdullin/webpack-study#readme",
   "devDependencies": {
     "css-loader": "^6.7.1",
+    "favicons": "^7.0.2",
+    "favicons-webpack-plugin": "^6.0.0-alpha.2",
     "html-webpack-plugin": "^5.5.0",
     "sass": "^1.56.0",
     "sass-loader": "^13.1.0",
