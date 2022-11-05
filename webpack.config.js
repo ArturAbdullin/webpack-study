@@ -1,10 +1,12 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const FaviconsWebpackPlugin = require("favicons-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const OUTPUT_FOLDER = "public";
 const ASSETS_FOLDER = "assets/";
 const JS_FOLDER = "js/";
+const CSS_FOLDER = "css/";
 
 module.exports = {
   mode: "development",
@@ -20,8 +22,8 @@ module.exports = {
         include: [path.resolve(__dirname, "src")], // where to find .ts files
       },
       {
-        test: /\.scss$/,
-        use: ["style-loader", "css-loader", "sass-loader"],
+        test: /\.s?css$/,
+        use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
         include: [path.resolve(__dirname, "src/styles")],
       },
       {
@@ -56,5 +58,8 @@ module.exports = {
       template: "src/template.html",
     }),
     new FaviconsWebpackPlugin("src/assets/favicon-32x32.png"),
+    new MiniCssExtractPlugin({
+      filename: `${CSS_FOLDER || ""}[name].css`,
+    }),
   ],
 };
