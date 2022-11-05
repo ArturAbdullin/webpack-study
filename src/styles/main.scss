@@ -41,13 +41,21 @@ body {
 
 }
 
+.github-link {
+  &__img {
+    margin-right: 5px;
+    margin-bottom: -0.2em;
+    width: 1.3em;
+  }
+}
+
 h3 {
   margin: 0;
   opacity: 0.5;
   letter-spacing: 2px;
 }
 
-img {
+#laughImg {
   width: 200px;
   margin-bottom: 20px;
 }
