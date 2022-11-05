@@ -2,6 +2,8 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 const OUTPUT_FOLDER = "public";
+const ASSETS_FOLDER = "assets/";
+const JS_FOLDER = "js/";
 
 module.exports = {
   mode: "development",
@@ -32,9 +34,9 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, OUTPUT_FOLDER),
-    filename: "[name][contenthash].js", // contenthash is for caching https://webpack.js.org/guides/caching/
+    filename: `${JS_FOLDER || ""}[name][contenthash].js`, // contenthash is for caching https://webpack.js.org/guides/caching/
     clean: true,
-    assetModuleFilename: "[name][ext]",
+    assetModuleFilename: `${ASSETS_FOLDER || ""}[name][ext]`,
   },
   devServer: {
     static: {
